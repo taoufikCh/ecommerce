@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!-- {% include 'base/navbar.html' with brand_name=brand  %} -->
+
+ <div class="text-center">
+    <h1>{{ title }}</h1>
+    <h2>Hello, world We're working!</h2>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col">
+     
+     <div class="col-md-6 col-12 mx-auto">
+      <p> {{ content }}</p>
+      <form method="POST" class="contact-form" action='{% url "contact" %}'> {% csrf_token %}
+       {{ form.as_p }}
+        <button type="submit" class="btn btn-primary">Submit</button>
+     </form>
+
+{% endblock %}
+
